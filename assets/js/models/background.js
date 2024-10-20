@@ -26,11 +26,35 @@ class Background {
 
   draw() {
     // iteration 1: draw the static backgorund img
+    this.ctx.drawImage(this.bgImg, 
+      0, 
+      0, 
+      this.ctx.canvas.width, 
+      this.ctx.canvas.height
+    );
+
     
     // iteration 1: draw footer img twice
 
+    this.ctx.drawImage(this.footerImg, 
+      this.x, this.y, 
+      this.footerImg.width, 
+      this.footerImg.height
+    );
+
+    this.ctx.drawImage(this.footerImg, 
+      this.x + this.footerImg.width, 
+      this.y, this.footerImg.width, 
+      this.footerImg.height
+    );
+
+  }
   move() {
     // iteration 1: move the ground
+    this.x -= this.vx;
     // iteration 1: check bounds and reset position
+    if(this.x + this.footerImg.width < 0) {
+      this.x = 0;
+    }
   }
 }

@@ -27,3 +27,7 @@ body * {
   flex-direction: column;
   height: 100%;
 }
+
+canvas {
+  border: black, 2px, solid;
+}
